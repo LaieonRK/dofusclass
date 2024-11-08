@@ -15,9 +15,11 @@ import { onMounted } from 'vue';
 onMounted(() => {
   const isDevelopment = window.location.hostname === 'localhost';
   const favicon = document.createElement('link');
+  console.log(favicon)
   favicon.rel = 'icon';
   favicon.type = 'image/png';
   favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
+  console.log(favicon.href)
   document.head.appendChild(favicon);
 });
 </script>
