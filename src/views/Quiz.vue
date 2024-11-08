@@ -1,9 +1,14 @@
 <template>
-  <div>
+  <div class="quiz">
+    <!-- Affichage de l'annotation de progression -->
+    <div class="progress-indicator">
+      Question {{ currentQuestionIndex + 1 }} sur {{ questions.length }}
+    </div>
+
+    <!-- Affichage de la question avec le composant Question.vue -->
     <Question
-      v-if="currentQuestionIndex < questions.length"
+      v-if="currentQuestion && currentQuestionIndex < questions.length"
       :questionText="currentQuestion.text"
-      :videoSrc="currentQuestion.video"
       :options="currentQuestion.options"
       @answer-selected="handleAnswer"
     />
@@ -283,3 +288,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.progress-indicator {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+</style>
