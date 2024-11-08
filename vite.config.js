@@ -14,7 +14,7 @@ export default defineConfig({
     outDir: 'docs', // Remplacez "build" par le nom que vous souhaitez
   },
   base: '/',
-  publicPath: '/',
+  publicPath: '/dofusclass/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
