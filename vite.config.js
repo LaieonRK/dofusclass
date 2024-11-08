@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     outDir: 'docs', // Remplacez "build" par le nom que vous souhaitez
   },
-  base: '/dofusclass/',
+  //base: '/dofusclass/',
   publicPath: '/dofusclass/',
   resolve: {
     alias: {
