@@ -1,18 +1,18 @@
 <template>
   <div>
     <a href="https://dofus.com/fr/" target="_blank">
-      <img src="./assets/dofus.webp" alt="Logo Dofus" style="width: 200px; height: auto;" />
+      <!--img src="./assets/dofus.webp" alt="Logo Dofus" style="width: 200px; height: auto;" /-->
     </a>
   </div>
-  <router-view />
+  abc
 </template>
 
-<script setup>
+<!--script setup>
 import Quiz from './views/Quiz.vue'
 import BackButton from './components/BackButton.vue';
 import { onMounted } from 'vue';
 
-onMounted(() => {
+/*onMounted(() => {
   const isDevelopment = window.location.hostname === 'localhost';
   const favicon = document.createElement('link');
   favicon.rel = 'icon';
@@ -20,4 +20,4 @@ onMounted(() => {
   favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
   document.head.appendChild(favicon);
 });
-</script>
+</script-->
