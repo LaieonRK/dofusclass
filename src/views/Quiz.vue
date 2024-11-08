@@ -281,7 +281,7 @@ export default {
 
       // Rediriger vers la page de résultats avec la classe recommandée
       this.$router.push({
-        path: '/result',
+        path: '/dofusclass/result',
         query: { classRecommendation: recommendedClass }
       });
     },
