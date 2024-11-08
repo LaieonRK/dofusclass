@@ -9,7 +9,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/dofusclass/'), // Spécifiez le sous-répertoire ici
+  history: createWebHistory(),
   routes,
 });
 
