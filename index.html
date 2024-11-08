@@ -2,18 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/dofusclass/dofus.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dofusclass</title>
   </head>
   <body>
     <div id="app"></div>
-    <!-- Inclure le script main.js uniquement en développement -->
     <script type="module">
       const isDevelopment = window.location.hostname === 'localhost';
       if (isDevelopment) {
         import('./src/main.js');
       }
+      
+      // Injecter dynamiquement le favicon en fonction de l'environnement
+      const favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      favicon.type = 'image/png';
+      favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
+      document.head.appendChild(favicon);
     </script>
   </body>
 </html>
