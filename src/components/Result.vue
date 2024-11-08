@@ -131,7 +131,7 @@ const videoSource = (() => {
 const isYouTubeVideo = videoSource.includes('youtube-nocookie.com');
 
 const goToQuiz = () => {
-  router.push('/dofusclass/'); // Rediriger vers la page du quiz directement
+  router.push('/'); // Rediriger vers la page du quiz directement
 };
 </script>
 
