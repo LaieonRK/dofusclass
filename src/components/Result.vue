@@ -39,43 +39,43 @@ const classRecommendation = route.query.classRecommendation;
 const logoSource = (() => {
   switch (classRecommendation) {
     case 'Ecaflip':
-      return '/src/assets/ecaflip-logo.png';
+      return '/dofusclass/src/assets/ecaflip-logo.png';
     case 'Eniripsa':
-      return '/src/assets/eniripsa-logo.png';
+      return '/dofusclass/src/assets/eniripsa-logo.png';
     case 'Iop':
-      return '/src/assets/iop-logo.png';
+      return '/dofusclass/src/assets/iop-logo.png';
     case 'Cra':
-      return '/src/assets/cra-logo.png';
+      return '/dofusclass/src/assets/cra-logo.png';
     case 'Feca':
-      return '/src/assets/feca-logo.png';
+      return '/dofusclass/src/assets/feca-logo.png';
     case 'Sacrieur':
-      return '/src/assets/sacrieur-logo.png';
+      return '/dofusclass/src/assets/sacrieur-logo.png';
     case 'Sadida':
-      return '/src/assets/sadida-logo.png';
+      return '/dofusclass/src/assets/sadida-logo.png';
     case 'Osamodas':
-      return '/src/assets/osamodas-logo.png';
+      return '/dofusclass/src/assets/osamodas-logo.png';
     case 'Enutrof':
-      return '/src/assets/enutrof-logo.png';
+      return '/dofusclass/src/assets/enutrof-logo.png';
     case 'Sram':
-      return '/src/assets/sram-logo.png';
+      return '/dofusclass/src/assets/sram-logo.png';
     case 'Xelor':
-      return '/src/assets/xelor-logo.png';
+      return '/dofusclass/src/assets/xelor-logo.png';
     case 'Pandawa':
-      return '/src/assets/pandawa-logo.png';
+      return '/dofusclass/src/assets/pandawa-logo.png';
     case 'Roublard':
-      return '/src/assets/roublard-logo.png';
+      return '/dofusclass/src/assets/roublard-logo.png';
     case 'Zobal':
-      return '/src/assets/zobal-logo.png';
+      return '/dofusclass/src/assets/zobal-logo.png';
     case 'Steamer':
-      return '/src/assets/steamer-logo.png';
+      return '/dofusclass/src/assets/steamer-logo.png';
     case 'Eliotrope':
-      return '/src/assets/eliotrope-logo.png';
+      return '/dofusclass/src/assets/eliotrope-logo.png';
     case 'Huppermage':
-      return '/src/assets/huppermage-logo.png';
+      return '/dofusclass/src/assets/huppermage-logo.png';
     case 'Ouginak':
-      return '/src/assets/ouginak-logo.png';
+      return '/dofusclass/src/assets/ouginak-logo.png';
     case 'Forgelance':
-      return '/src/assets/forgelance-logo.png';
+      return '/dofusclass/src/assets/forgelance-logo.png';
     default:
       return '';
   }
