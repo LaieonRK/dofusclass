@@ -3,5 +3,5 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig(({ mode }) => ({
   plugins: [vue()],
-  base: mode === 'production' ? '/dofusclass/' : '/', // Utilise '/dofusclass/' uniquement en production
+  base: "/dofusclass/"
 }));
