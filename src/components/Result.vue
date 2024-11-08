@@ -39,43 +39,43 @@ const classRecommendation = route.query.classRecommendation;
 const logoSource = (() => {
   switch (classRecommendation) {
     case 'Ecaflip':
-      return '/images/ecaflip-logo.png';
+      return '/src/assets/ecaflip-logo.png';
     case 'Eniripsa':
-      return '/images/eniripsa-logo.png';
+      return '/src/assets/eniripsa-logo.png';
     case 'Iop':
-      return '/images/iop-logo.png';
+      return '/src/assets/iop-logo.png';
     case 'Cra':
-      return '/images/cra-logo.png';
+      return '/src/assets/cra-logo.png';
     case 'Feca':
-      return '/images/feca-logo.png';
+      return '/src/assets/feca-logo.png';
     case 'Sacrieur':
-      return '/images/sacrieur-logo.png';
+      return '/src/assets/sacrieur-logo.png';
     case 'Sadida':
-      return '/images/sadida-logo.png';
+      return '/src/assets/sadida-logo.png';
     case 'Osamodas':
-      return '/images/osamodas-logo.png';
+      return '/src/assets/osamodas-logo.png';
     case 'Enutrof':
-      return '/images/enutrof-logo.png';
+      return '/src/assets/enutrof-logo.png';
     case 'Sram':
-      return '/images/sram-logo.png';
+      return '/src/assets/sram-logo.png';
     case 'Xelor':
-      return '/images/xelor-logo.png';
+      return '/src/assets/xelor-logo.png';
     case 'Pandawa':
-      return '/images/pandawa-logo.png';
+      return '/src/assets/pandawa-logo.png';
     case 'Roublard':
-      return '/images/roublard-logo.png';
+      return '/src/assets/roublard-logo.png';
     case 'Zobal':
-      return '/images/zobal-logo.png';
+      return '/src/assets/zobal-logo.png';
     case 'Steamer':
-      return '/images/steamer-logo.png';
+      return '/src/assets/steamer-logo.png';
     case 'Eliotrope':
-      return '/images/eliotrope-logo.png';
+      return '/src/assets/eliotrope-logo.png';
     case 'Huppermage':
-      return '/images/huppermage-logo.png';
+      return '/src/assets/huppermage-logo.png';
     case 'Ouginak':
-      return '/images/ouginak-logo.png';
+      return '/src/assets/ouginak-logo.png';
     case 'Forgelance':
-      return '/images/forgelance-logo.png';
+      return '/src/assets/forgelance-logo.png';
     default:
       return '';
   }
