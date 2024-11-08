@@ -10,7 +10,8 @@
     <div id="app"></div>
     <!-- Inclure le script main.js uniquement en développement -->
     <script type="module">
-      if (import.meta.env.MODE === 'development') {
+      const isDevelopment = window.location.hostname === 'localhost';
+      if (isDevelopment) {
         import('/src/main.js');
       }
     </script>
