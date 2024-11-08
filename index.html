@@ -12,23 +12,16 @@
       if (isDevelopment) {
         import('./src/main.js');
       }
-      
-      // Injecter dynamiquement le favicon en fonction de l'environnement
-      const favicon = document.createElement('link');
-      favicon.rel = 'icon';
-      favicon.type = 'image/png';
-      favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
-      document.head.appendChild(favicon);
     </script>
   </body>
 </html>
 
 <style scoped>
   body {
-      margin: -5%;
-      display: flex;
-      place-items: center;
-      min-width: 320px;
-      min-height: 100vh;
+    margin: -5%;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
   }
-  </style>
+</style>

@@ -10,4 +10,14 @@
 <script setup>
 import Quiz from './views/Quiz.vue'
 import BackButton from './components/BackButton.vue';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const isDevelopment = window.location.hostname === 'localhost';
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
+  document.head.appendChild(favicon);
+});
 </script>
