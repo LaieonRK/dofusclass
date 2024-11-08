@@ -8,6 +8,11 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- Inclure le script main.js uniquement en développement -->
+    <script type="module">
+      if (import.meta.env.MODE === 'development') {
+        import('/src/main.js');
+      }
+    </script>
   </body>
 </html>
