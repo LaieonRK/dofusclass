@@ -4,8 +4,8 @@ import Quiz from '../views/Quiz.vue';
 import Result from '../components/Result.vue';
 
 const routes = [
-  { path: '/dofusclass', component: Quiz },
-  { path: '/dofusclass/result', component: Result },
+  { path: '/', component: Quiz },
+  { path: '/result', component: Result },
 ];
 
 const router = createRouter({
