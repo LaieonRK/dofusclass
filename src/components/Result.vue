@@ -1,71 +1,78 @@
 <template>
-  <!-- Bouton Retour au quiz en haut à gauche -->
-  <button @click="goToQuiz" class="back-to-quiz-button">
-    <span class="icon">←</span> Retour au quiz
-  </button>
-
-  <div class="result">
-    <h2 class="class-result-heading">
-      <span class="normal-text">Vous correspondez à la classe</span>
-      <span class="bold-text"> {{ classRecommendation }} </span>
-      <img :src="logoSource" alt="Logo Classe" class="logo" v-if="logoSource" />
-    </h2>
-
-    <div class="responsive-video">
-      <!-- Vidéo YouTube -->
-      <iframe
-        v-if="isYouTubeVideo"
-        :src="videoSource"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- Groupe de boutons PVP et PVM, avec indication du bouton actif -->
-    <div class="button-group">
-      <button 
-        @click="toggleImage('PVP')" 
-        :class="['styled-button', showPVPImage ? 'active-button' : '']"
-      >
-        PVP
+  <div class="page-container">
+    <!-- Contenu principal de la page -->
+    <div class="result">
+      <button @click="goToQuiz" class="back-to-quiz-button">
+        <span class="icon">←</span> Retour au quiz
       </button>
-      <button 
-        @click="toggleImage('PVM')" 
-        :class="['styled-button', showPVMImage ? 'active-button' : '']"
-      >
-        PVM
-      </button>
-    </div>
-    <!-- Conteneur pour le lien des builds et le tableau -->
-    <div ref="imageSection">
-    <!-- Lien vers les builds PVM (si mode PVM activé) -->
-    <div v-if="showPVMImage" class="build-link-container">
-      <a :href="pvmBuildUrl" target="_blank" class="build-link">Voir les builds</a>
-    </div>
 
-    <!-- Lien vers les builds PVP (si mode PVP activé) -->
-    <div v-if="showPVPImage" class="build-link-container">
-      <a :href="pvpBuildUrl" target="_blank" class="build-link">Voir les builds</a>
-    </div>
+      <h2 class="class-result-heading">
+        <span class="normal-text">Vous correspondez à la classe</span>
+        <span class="bold-text"> {{ classRecommendation }} </span>
+        <img :src="logoSource" alt="Logo Classe" class="logo" v-if="logoSource" />
+      </h2>
 
-    <!-- Conteneur pour le tableau des points positifs et négatifs -->
-    <div v-if="showPVPImage || showPVMImage" class="table-container">
-      <table class="points-table">
-        <thead>
-          <tr>
-            <th>Points positifs</th>
-            <th>Points négatifs</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(point, index) in pointsTable" :key="index">
-            <td class="positive">+ {{ point.positif }}</td>
-            <td class="negative">- {{ point.negatif }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="responsive-video">
+        <iframe
+          v-if="isYouTubeVideo"
+          :src="videoSource"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="button-group">
+        <button 
+          @click="toggleImage('PVP')" 
+          :class="['styled-button', showPVPImage ? 'active-button' : '']"
+        >
+          PVP
+        </button>
+        <button 
+          @click="toggleImage('PVM')" 
+          :class="['styled-button', showPVMImage ? 'active-button' : '']"
+        >
+          PVM
+        </button>
+      </div>
+
+      <div ref="imageSection">
+        <div v-if="showPVMImage" class="build-link-container">
+          <a :href="pvmBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+        </div>
+
+        <div v-if="showPVPImage" class="build-link-container">
+          <a :href="pvpBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+        </div>
+
+        <div v-if="showPVPImage || showPVMImage" class="table-container">
+          <table class="points-table">
+            <thead>
+              <tr>
+                <th>Points positifs</th>
+                <th>Points négatifs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(point, index) in pointsTable" :key="index">
+                <td class="positive">+ {{ point.positif }}</td>
+                <td class="negative">- {{ point.negatif }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="info-container">
+            <!-- Texte dynamique pour l'auteur en fonction du mode sélectionné -->
+            <div class="joueur-info">
+              {{ authorText }}
+            </div>
+            <!-- Affichage de la version actuelle de Dofus -->
+            <div class="version-info">
+              Patch : 2.73.3.12
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -451,6 +458,9 @@ const pointsData = {
   // Ajouter d'autres classes selon le même modèle
 };
 
+// Propriété calculée pour le texte d'auteur en fonction du mode sélectionné
+const authorText = computed(() => (showPVPImage.value ? "Défini par X" : "Défini par X"));
+
 // Tableau dynamique pour afficher les points selon le mode (PVP/PVM) et la classe
 const pointsTable = computed(() => {
   return pointsData[classRecommendation]?.[showPVPImage.value ? 'PVP' : 'PVM'] || [];
@@ -475,12 +485,20 @@ const goToQuiz = () => {
 </script>
 
 <style scoped>
+/* Structure globale pour que le footer soit en bas */
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .result {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
+  padding-bottom: 3rem;
+  flex: 1; /* Prend toute la hauteur disponible, pousse le footer vers le bas */
 }
 
 .class-result-heading {
@@ -610,7 +628,7 @@ const goToQuiz = () => {
 .back-to-quiz-button {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 35px;
   padding: 0.5rem 1rem;
   background: #800020;
   color: white;
@@ -623,5 +641,14 @@ const goToQuiz = () => {
 
 .back-to-quiz-button:hover {
   background: #a52a2a;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between; /* Espace entre les deux éléments */
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  font-style: italic;
 }
 </style>
