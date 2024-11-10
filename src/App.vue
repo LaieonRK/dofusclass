@@ -9,7 +9,7 @@
   </div>
   <!-- Footer -->
     <footer class="footer">
-      <p>COPYRIGHT © 2024 Dofusclass. Tous droits réservés</p>
+      <p>COPYRIGHT © 2024 Dofusclass. Tous droits réservés - Crée par Laieon</p>
       DOFUS est un MMORPG édité par Ankama. | « Dofusclass.com » et ses services dérivés sont des sites non-officiels sans aucun lien avec Ankama.
     </footer>
 </template>
