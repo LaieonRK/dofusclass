@@ -56,8 +56,8 @@
             </thead>
             <tbody>
               <tr v-for="(point, index) in pointsTable" :key="index">
-                <td class="positive">+ {{ point.positif }}</td>
-                <td class="negative">- {{ point.negatif }}</td>
+                <td class="positive">{{ point.positif }}</td>
+                <td class="negative">{{ point.negatif }}</td>
               </tr>
             </tbody>
           </table>
@@ -191,248 +191,248 @@ const pvpBuildUrl = computed(() => `https://huzounet.fr/equipments?mode=pvp&clas
 const pointsData = {
   Ecaflip: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Gameplay répétitif en monoélément" },
-      { positif: "Très fort en 3 vs 3", negatif: "Mauvais en 1 vs 1" },
-      { positif: "Grosse capacité à soin", negatif: "Classe peu mobile" },
-      { positif: "Beaucoup de mobilité", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Gameplay répétitif en monoélément" },
+      { positif: "+Très fort en 3 vs 3", negatif: "-Mauvais en 1 vs 1" },
+      { positif: "+Grosse capacité à soin", negatif: "-Classe peu mobile" },
+      { positif: "+Beaucoup de mobilité", negatif: "" }
     ],
     PVM: [
-      { positif: "Bonne polyvalence", negatif: "" },
-      { positif: "Capacités de soin", negatif: "" },
-      { positif: "Dégâts élevés", negatif: "" }
+      { positif: "+Bonne polyvalence", negatif: "" },
+      { positif: "+Capacités de soin", negatif: "" },
+      { positif: "+Dégâts élevés", negatif: "" }
     ]
   },
   Eniripsa: {
     PVP: [
-      { positif: "Très fort en 3 vs 3", negatif: "Mauvais en 1 vs 1" },
-      { positif: "Teamplay boost", negatif: "Classe peu mobile" },
-      { positif: "Grosse capacité à soin", negatif: "Peu de mobilité" },
-      { positif: "Peut debuff", negatif: "" }
+      { positif: "+Très fort en 3 vs 3", negatif: "-Mauvais en 1 vs 1" },
+      { positif: "+Teamplay boost", negatif: "-Classe peu mobile" },
+      { positif: "+Grosse capacité à soin", negatif: "-Peu de mobilité" },
+      { positif: "+Peut debuff", negatif: "" }
     ],
     PVM: [
-      { positif: "Très bons soins", negatif: "Faibles dégâts" },
-      { positif: "Utile dans la plupart des équipes PVM", negatif: "Dépendance aux alliés pour être efficace" }
+      { positif: "+Très bons soins", negatif: "-Faibles dégâts" },
+      { positif: "+Utile dans la plupart des équipes PVM", negatif: "-Dépendance aux alliés pour être efficace" }
     ]
   },
   Iop: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "On s’attend à ce qu’il tape + fort" },
-      { positif: "Très fort en 3 vs 3", negatif: "Limité à distance" },
-      { positif: "Possibilité d'éroder l'ennemi", negatif: "" },
-      { positif: "Grande survivabilité avec ses shields", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-On s’attend à ce qu’il tape + fort" },
+      { positif: "+Très fort en 3 vs 3", negatif: "-Limité à distance" },
+      { positif: "+Possibilité d'éroder l'ennemi", negatif: "" },
+      { positif: "+Grande survivabilité avec ses shields", negatif: "" }
     ],
     PVM: [
-      { positif: "Beaucoup de dégâts en mêlée", negatif: "Faible portée" },
-      { positif: "Combats rapides", negatif: "Manque de soin" },
-      { positif: "Capacités à boost l'équipe", negatif: "Gameplay répétitif" }
+      { positif: "+Beaucoup de dégâts en mêlée", negatif: "-Faible portée" },
+      { positif: "+Combats rapides", negatif: "-Manque de soin" },
+      { positif: "+Capacités à boost l'équipe", negatif: "-Gameplay répétitif" }
     ]
   },
   Cra: {
     PVP: [
-      { positif: "Fort en 1 vs 1", negatif: "Manque de protection" },
-      { positif: "D’énormes dégâts", negatif: "Faible en mêlée" },
-      { positif: "Grosse portée", negatif: "Dépendance à la distance" },
-      { positif: "Capacité de retrait PM et de repousser", negatif: "" }
+      { positif: "+Fort en 1 vs 1", negatif: "-Manque de protection" },
+      { positif: "+D’énormes dégâts", negatif: "-Faible en mêlée" },
+      { positif: "+Grosse portée", negatif: "-Dépendance à la distance" },
+      { positif: "+Capacité de retrait PM et de repousser", negatif: "" }
     ],
     PVM: [
-      { positif: "Excellente portée", negatif: "Fragile en mêlée" },
-      { positif: "Bon pour le contrôle de la carte", negatif: "Gameplay répétitif" },
-      { positif: "Capacités de retrait de PM", negatif: "" }
+      { positif: "+Excellente portée", negatif: "-Fragile en mêlée" },
+      { positif: "+Bon pour le contrôle de la carte", negatif: "-Gameplay répétitif" },
+      { positif: "+Capacités de retrait de PM", negatif: "" }
     ]
   },
   Feca: {
     PVP: [
-      { positif: "Très fort en 3 vs 3", negatif: "Très mauvais en 1 vs 1" },
-      { positif: "Capacité à entraver", negatif: "Manque d'érosion" },
-      { positif: "Beaucoup de sorts de protection", negatif: "Manque de dégâts" }
+      { positif: "+Très fort en 3 vs 3", negatif: "-Très mauvais en 1 vs 1" },
+      { positif: "+Capacité à entraver", negatif: "-Manque d'érosion" },
+      { positif: "+Beaucoup de sorts de protection", negatif: "-Manque de dégâts" }
     ],
     PVM: [
-      { positif: "Excellente protection", negatif: "Dépendant des buffs" },
-      { positif: "Excellentes résistances", negatif: "Gameplay répétitif" },
-      { positif: "Bon pour les combats prolongés", negatif: "Manque d'érosion" },
-      { positif: "Utile dans toutes les équipes PVM", negatif: "" }
+      { positif: "+Excellente protection", negatif: "-Dépendant des buffs" },
+      { positif: "+Excellentes résistances", negatif: "-Gameplay répétitif" },
+      { positif: "+Bon pour les combats prolongés", negatif: "-Manque d'érosion" },
+      { positif: "+Utile dans toutes les équipes PVM", negatif: "" }
     ]
   },
   Sacrieur: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Attention aux dommages de poussée" },
-      { positif: "Très fort en 3 vs 3", negatif: "Manque de portée" },
-      { positif: "Le système de Berserk qui permet de tank en tapant fort", negatif: "Vulnérable à l'érosion" },
-      { positif: "Grande survie", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Attention aux dommages de poussée" },
+      { positif: "+Très fort en 3 vs 3", negatif: "-Manque de portée" },
+      { positif: "+Le système de Berserk qui permet de tank en tapant fort", negatif: "-Vulnérable à l'érosion" },
+      { positif: "+Grande survie", negatif: "" }
     ],
     PVM: [
-      { positif: "Excellent tankiness", negatif: "Dépendant des soins extérieurs ou du vol de vie pour durer" },
-      { positif: "Bon en positionnement", negatif: "Se met en danger en mêlée en PVM" },
-      { positif: "Grande capacité de survie grâce au vol de vie", negatif: "" }
+      { positif: "+Excellent tankiness", negatif: "-Dépendant des soins extérieurs ou du vol de vie pour durer" },
+      { positif: "+Bon en positionnement", negatif: "-Se met en danger en mêlée en PVM" },
+      { positif: "+Grande capacité de survie grâce au vol de vie", negatif: "" }
     ]
   },
   Sadida: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Difficile à jouer" },
-      { positif: "Très fort en 3 vs 3", negatif: "Gameplay lent" },
-      { positif: "Excellent retrait PM et PA", negatif: "Faibles dégâts directs" },
-      { positif: "Invocation qui peuvent contrôler la map", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Difficile à jouer" },
+      { positif: "+Très fort en 3 vs 3", negatif: "-Gameplay lent" },
+      { positif: "+Excellent retrait PM et PA", negatif: "-Faibles dégâts directs" },
+      { positif: "+Invocation qui peuvent contrôler la map", negatif: "" }
     ],
     PVM: [
-      { positif: "Invocations utiles", negatif: "Gameplay lent" },
-      { positif: "Bon en retrait PM", negatif: "Dépendant de ses invocations" },
-      { positif: "Capacités de soin", negatif: "Manque de flexibilité en jouant avec des alliés rapides" },
-      { positif: "Capacités de poison", negatif: "" }
+      { positif: "+Invocations utiles", negatif: "-Gameplay lent" },
+      { positif: "+Bon en retrait PM", negatif: "-Dépendant de ses invocations" },
+      { positif: "+Capacités de soin", negatif: "-Manque de flexibilité en jouant avec des alliés rapides" },
+      { positif: "+Capacités de poison", negatif: "" }
     ]
   },
   Osamodas: {
     PVP: [
-      { positif: "Fort en 1 vs 1", negatif: "Difficile à jouer" },
-      { positif: "Fort en 3 vs 3", negatif: "Gestion complexe des invocations" },
-      { positif: "Grande variété de gameplay", negatif: "Vulnérable aux attaques de zone" }
+      { positif: "+Fort en 1 vs 1", negatif: "-Difficile à jouer" },
+      { positif: "+Fort en 3 vs 3", negatif: "-Gestion complexe des invocations" },
+      { positif: "+Grande variété de gameplay", negatif: "-Vulnérable aux attaques de zone" }
     ],
     PVM: [
-      { positif: "Invocations polyvalentes", negatif: "Gestion des invocations complexe" },
-      { positif: "Très bon en soutien avec des soins et buffs", negatif: "Peut saturer la carte" },
-      { positif: "Flexible", negatif: "Gameplay lent" }
+      { positif: "+Invocations polyvalentes", negatif: "-Gestion des invocations complexe" },
+      { positif: "+Très bon en soutien avec des soins et buffs", negatif: "-Peut saturer la carte" },
+      { positif: "+Flexible", negatif: "-Gameplay lent" }
     ]
   },
   Enutrof: {
     PVP: [
-      { positif: "Fort en 1 vs 1", negatif: "Manque d'érosion" },
-      { positif: "Fort en 3 vs 3", negatif: "Faible en mêlée" },
-      { positif: "Bon pour le retrait PM", negatif: "" }
+      { positif: "+Fort en 1 vs 1", negatif: "-Manque d'érosion" },
+      { positif: "+Fort en 3 vs 3", negatif: "-Faible en mêlée" },
+      { positif: "+Bon pour le retrait PM", negatif: "" }
     ],
     PVM: [
-      { positif: "Excellente portée", negatif: "Dépend de la distance" },
-      { positif: "Capacités de retrait PM", negatif: "" }
+      { positif: "+Excellente portée", negatif: "-Dépend de la distance" },
+      { positif: "+Capacités de retrait PM", negatif: "" }
     ]
   },
   Sram: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Mauvais en 3 vs 3" },
-      { positif: "Capacité à éroder", negatif: "Manque de protection" },
-      { positif: "Invisibilité", negatif: "Fragile une fois sorti de l'invisibilité" },
-      { positif: "Possibilité de one shot avec les réseaux de pièges", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Mauvais en 3 vs 3" },
+      { positif: "+Capacité à éroder", negatif: "-Manque de protection" },
+      { positif: "+Invisibilité", negatif: "-Fragile une fois sorti de l'invisibilité" },
+      { positif: "+Possibilité de one shot avec les réseaux de pièges", negatif: "" }
     ],
     PVM: [
-      { positif: "Bon pour le positionnement des ennemis", negatif: "Difficile à jouer pour les pièges" },
-      { positif: "Possibilité de one shot avec les réseaux de pièges", negatif: "Dépendant de la tactique du combat et du placement" },
-      { positif: "Dégâts élevés en furtivité", negatif: "" },
-      { positif: "Efficace en solo", negatif: "" }
+      { positif: "+Bon pour le positionnement des ennemis", negatif: "-Difficile à jouer pour les pièges" },
+      { positif: "+Possibilité de one shot avec les réseaux de pièges", negatif: "-Dépendant de la tactique du combat et du placement" },
+      { positif: "+Dégâts élevés en furtivité", negatif: "" },
+      { positif: "+Efficace en solo", negatif: "" }
     ]
   },
   Xelor: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Difficile à jouer" },
-      { positif: "Beaucoup de mobilité", negatif: "Manque de protection" },
-      { positif: "Capacité de placement", negatif: "" },
-      { positif: "Très bon dégâts", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Difficile à jouer" },
+      { positif: "+Beaucoup de mobilité", negatif: "-Manque de protection" },
+      { positif: "+Capacité de placement", negatif: "" },
+      { positif: "+Très bon dégâts", negatif: "" }
     ],
     PVM: [
-      { positif: "Très bon en gestion du placement des ennemis", negatif: "Complexe à maîtriser" },
-      { positif: "", negatif: "Dépendant de PA pour être efficace" },
-      { positif: "", negatif: "Manque de vol de vie" }
+      { positif: "+Très bon en gestion du placement des ennemis", negatif: "-Complexe à maîtriser" },
+      { positif: "", negatif: "-Dépendant de PA pour être efficace" },
+      { positif: "", negatif: "-Manque de vol de vie" }
     ]
   },
   Pandawa: {
     PVP: [
-      { positif: "Fort en 1 vs 1", negatif: "Manque d'érosion" },
-      { positif: "Correct en 3 vs 3", negatif: "Dégâts modérés" },
-      { positif: "Beaucoup de mobilité", negatif: "" },
-      { positif: "Capacité de placement", negatif: "" },
-      { positif: "Bon tank", negatif: "" }
+      { positif: "+Fort en 1 vs 1", negatif: "-Manque d'érosion" },
+      { positif: "+Correct en 3 vs 3", negatif: "-Dégâts modérés" },
+      { positif: "+Beaucoup de mobilité", negatif: "" },
+      { positif: "+Capacité de placement", negatif: "" },
+      { positif: "+Bon tank", negatif: "" }
     ],
     PVM: [
-      { positif: "Capacités de tanking", negatif: "Dépendant de la maîtrise des sorts de soutien" },
-      { positif: "Capacités de placement", negatif: "Dégâts modérés" },
-      { positif: "Très mobile", negatif: "Complexe à joeur efficacement" },
-      { positif: "Excellent contrôle de carte", negatif: "Manque d'érosion" }
+      { positif: "+Capacités de tanking", negatif: "-Dépendant de la maîtrise des sorts de soutien" },
+      { positif: "+Capacités de placement", negatif: "-Dégâts modérés" },
+      { positif: "+Très mobile", negatif: "-Complexe à joeur efficacement" },
+      { positif: "+Excellent contrôle de carte", negatif: "-Manque d'érosion" }
     ]
   },
   Roublard: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Difficile à jouer" },
-      { positif: "D’énormes dégâts si setup", negatif: "Moyen en 3 vs 3" },
-      { positif: "Dégâts en AoE", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Difficile à jouer" },
+      { positif: "+D’énormes dégâts si setup", negatif: "-Moyen en 3 vs 3" },
+      { positif: "+Dégâts en AoE", negatif: "" }
     ],
     PVM: [
-      { positif: "Gros dégâts avec les bombes", negatif: "Dépendant de la planification et du positionnement" },
-      { positif: "Excellent en placement stratégique", negatif: "Inefficace si les bombes sont détruites" }
+      { positif: "+Gros dégâts avec les bombes", negatif: "-Dépendant de la planification et du positionnement" },
+      { positif: "+Excellent en placement stratégique", negatif: "-Inefficace si les bombes sont détruites" }
     ]
   },
   Zobal: {
     PVP: [
-      { positif: "Très fort en 3 vs 3", negatif: "Mauvais en 1 vs 1" },
-      { positif: "Sorts de protection en AoE", negatif: "Dégâts modérés" },
-      { positif: "Beaucoup de mobilité", negatif: "" },
-      { positif: "Bon en mêlée", negatif: "" }
+      { positif: "+Très fort en 3 vs 3", negatif: "-Mauvais en 1 vs 1" },
+      { positif: "+Sorts de protection en AoE", negatif: "-Dégâts modérés" },
+      { positif: "+Beaucoup de mobilité", negatif: "" },
+      { positif: "+Bon en mêlée", negatif: "" }
     ],
     PVM: [
-      { positif: "Bon pour les boucliers et protections", negatif: "Complexe à jouer" },
-      { positif: "Polyvalent en PVM", negatif: "Dépendant des masques pour le style de jeu" },
-      { positif: "Bon potentiel en mêlée", negatif: "Dégâts modérés" }
+      { positif: "+Bon pour les boucliers et protections", negatif: "-Complexe à jouer" },
+      { positif: "+Polyvalent en PVM", negatif: "-Dépendant des masques pour le style de jeu" },
+      { positif: "+Bon potentiel en mêlée", negatif: "-Dégâts modérés" }
     ]
   },
   Steamer: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Difficile à jouer" },
-      { positif: "Très bon en 3 vs 3", negatif: "Dépendance aux tourelles" },
-      { positif: "Beaucoup de sorts de protection", negatif: "" },
-      { positif: "Grosse capacité à soin", negatif: "" },
-      { positif: "Très polyvalent", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Difficile à jouer" },
+      { positif: "+Très bon en 3 vs 3", negatif: "-Dépendance aux tourelles" },
+      { positif: "+Beaucoup de sorts de protection", negatif: "" },
+      { positif: "+Grosse capacité à soin", negatif: "" },
+      { positif: "+Très polyvalent", negatif: "" }
     ],
     PVM: [
-      { positif: "Polyvalent avec les tourelles", negatif: "Complexe à maîtriser" },
-      { positif: "Bon en soutien de dégâts et de soin", negatif: "Dépendant des tourelles" },
-      { positif: "Utile pour le contrôle de carte", negatif: "Gameplay statique" },
-      { positif: "De bons dégâts à distance", negatif: "" }
+      { positif: "+Polyvalent avec les tourelles", negatif: "-Complexe à maîtriser" },
+      { positif: "+Bon en soutien de dégâts et de soin", negatif: "-Dépendant des tourelles" },
+      { positif: "+Utile pour le contrôle de carte", negatif: "-Gameplay statique" },
+      { positif: "+De bons dégâts à distance", negatif: "" }
     ]
   },
   Eliotrope: {
     PVP: [
-      { positif: "Beaucoup de mobilité", negatif: "Difficile à jouer" },
-      { positif: "Capacité de placement", negatif: "Moyen en PvP dans la meta actuelle" },
-      { positif: "Dégâts élevés avec les portails", negatif: "" }
+      { positif: "+Beaucoup de mobilité", negatif: "-Difficile à jouer" },
+      { positif: "+Capacité de placement", negatif: "-Moyen en PvP dans la meta actuelle" },
+      { positif: "+Dégâts élevés avec les portails", negatif: "" }
     ],
     PVM: [
-      { positif: "Excellent pour la mobilité de l'équipe", negatif: "Complexe à jouer" },
-      { positif: "Dégâts massifs pour lui et ses alliés grâce aux portails", negatif: "Les portails peuvent être utilisés par les ennemis si mal placés" }
+      { positif: "+Excellent pour la mobilité de l'équipe", negatif: "-Complexe à jouer" },
+      { positif: "+Dégâts massifs pour lui et ses alliés grâce aux portails", negatif: "-Les portails peuvent être utilisés par les ennemis si mal placés" }
     ]
   },
   Huppermage: {
     PVP: [
-      { positif: "Beaucoup de mobilité", negatif: "Difficile à jouer" },
-      { positif: "Très polyvalent", negatif: "" },
-      { positif: "Bon mix dégâts à distance et mêlée", negatif: "" },
-      { positif: "Gameplay toujours unique", negatif: "" }
+      { positif: "+Beaucoup de mobilité", negatif: "-Difficile à jouer" },
+      { positif: "+Très polyvalent", negatif: "" },
+      { positif: "+Bon mix dégâts à distance et mêlée", negatif: "" },
+      { positif: "+Gameplay toujours unique", negatif: "" }
     ],
     PVM: [
-      { positif: "Très polyvalent avec des sorts de plusieurs éléments", negatif: "Complexe à jouer" },
-      { positif: "Dégâts élevés", negatif: "" },
-      { positif: "Bon contrôle de carte", negatif: "" },
-      { positif: "Peut vulné", negatif: "" }
+      { positif: "+Très polyvalent avec des sorts de plusieurs éléments", negatif: "-Complexe à jouer" },
+      { positif: "+Dégâts élevés", negatif: "" },
+      { positif: "+Bon contrôle de carte", negatif: "" },
+      { positif: "+Peut vulné", negatif: "" }
     ]
   },
   Ouginak: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Toujours dans la mêlée" },
-      { positif: "Très fort en 3 vs 3", negatif: "Dépendant du vol de vie" },
-      { positif: "Excellente capacité de survie", negatif: "Faible à distance" },
-      { positif: "Bon en mêlée", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Toujours dans la mêlée" },
+      { positif: "+Très fort en 3 vs 3", negatif: "-Dépendant du vol de vie" },
+      { positif: "+Excellente capacité de survie", negatif: "-Faible à distance" },
+      { positif: "+Bon en mêlée", negatif: "" }
     ],
     PVM: [
-      { positif: "Excellente tankiness", negatif: "Manque de portée" },
-      { positif: "Bon en dégâts de mêlée", negatif: "Vulnérabilité à distance" },
-      { positif: "Survie grâce au vol de vie", negatif: "" }
+      { positif: "+Excellente tankiness", negatif: "-Manque de portée" },
+      { positif: "+Bon en dégâts de mêlée", negatif: "-Vulnérabilité à distance" },
+      { positif: "+Survie grâce au vol de vie", negatif: "" }
     ]
   },
   Forgelance: {
     PVP: [
-      { positif: "Très fort en 1 vs 1", negatif: "Manque de dégâts en monocible" },
-      { positif: "Très fort en 3 vs 3", negatif: "" },
-      { positif: "Bon tank", negatif: "" },
-      { positif: "Polyvalent en mêlée et distance", negatif: "" },
-      { positif: "Sorts en AOE permettant de clean des invocations", negatif: "" }
+      { positif: "+Très fort en 1 vs 1", negatif: "-Manque de dégâts en monocible" },
+      { positif: "+Très fort en 3 vs 3", negatif: "" },
+      { positif: "+Bon tank", negatif: "" },
+      { positif: "+Polyvalent en mêlée et distance", negatif: "" },
+      { positif: "+Sorts en AOE permettant de clean des invocations", negatif: "" }
     ],
     PVM: [
-      { positif: "Polyvalence entre mêlée et distance", negatif: "Pas assez de dégâts monocibles" },
-      { positif: "Beaucoup de sorts en AoE", negatif: "" }
+      { positif: "+Polyvalence entre mêlée et distance", negatif: "-Pas assez de dégâts monocibles" },
+      { positif: "+Beaucoup de sorts en AoE", negatif: "" }
     ]
   }
   // Ajouter d'autres classes selon le même modèle

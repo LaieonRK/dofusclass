@@ -1,11 +1,8 @@
 <template>
   <div class="quiz">
-    <!-- Affichage de l'annotation de progression -->
     <div class="progress-indicator">
       Question {{ currentQuestionIndex + 1 }} sur {{ questions.length }}
     </div>
-
-    <!-- Affichage de la question avec le composant Question.vue -->
     <Question
       v-if="currentQuestion && currentQuestionIndex < questions.length"
       :questionText="currentQuestion.text"
@@ -26,119 +23,66 @@ export default {
       answers: [],
       questions: [
         {
-          text: "Lors d'un combat, quelle est votre priorité ?",
+          text: "Vous êtes encerclé par des ennemis. Quelle est votre première réaction ?",
           options: [
-            { text: "Infliger le maximum de dégâts rapidement", value: "damage" },
-            { text: "Protéger mes alliés coûte que coûte", value: "protection" },
-            { text: "Soigner les membres de mon équipe", value: "healing" },
-            { text: "Contrôler la position de mes ennemis", value: "control" }
+            { text: "Je frappe immédiatement pour en éliminer le plus possible", value: "damage" },
+            { text: "Je place des protections pour moi et mes alliés", value: "protection" },
+            { text: "J'invoque des créatures pour détourner l'attention", value: "summoning" },
+            { text: "Je recule et affaiblis leurs défenses", value: "debuff" },
           ],
         },
         {
-          text: "Quel rôle aimeriez-vous jouer lors d'une bataille stratégique ?",
+          text: "Un de vos alliés est grièvement blessé et l'ennemi approche. Que faites-vous ?",
           options: [
-            { text: "Être en première ligne, absorbant les coups", value: "tank" },
-            { text: "Lancer des sorts pour affaiblir les ennemis", value: "debuff" },
-            { text: "Rester en retrait et donner des buffs à mes alliés", value: "buff" },
-            { text: "Utiliser des invocations pour submerger l'ennemi", value: "summoning" }
+            { text: "Je soigne immédiatement mon allié", value: "healing" },
+            { text: "J'attire les ennemis pour les éloigner de lui", value: "tank" },
+            { text: "Je le buff pour augmenter sa résistance", value: "buff" },
+            { text: "Je tente de ralentir les ennemis pour gagner du temps", value: "control" },
           ],
         },
         {
-          text: "Quelle serait votre arme de prédilection ?",
+          text: "Vous avez l’opportunité de surprendre un groupe d’ennemis. Comment commencez-vous ?",
           options: [
-            { text: "Une épée puissante pour des attaques directes", value: "damage" },
-            { text: "Un bouclier pour protéger moi et mes alliés", value: "protection" },
-            { text: "Un bâton pour lancer des sorts de soins", value: "healing" },
-            { text: "Des artefacts pour invoquer des créatures", value: "summoning" }
+            { text: "Je prépare un sort puissant pour infliger des dégâts massifs", value: "damage" },
+            { text: "J'invoque des alliés pour prendre l'avantage", value: "summoning" },
+            { text: "J'affaiblis leurs capacités pour limiter leur riposte", value: "debuff" },
+            { text: "Je me renforce pour résister aux premières attaques", value: "tank" },
           ],
         },
         {
-          text: "Quel type de magie préférez-vous maîtriser ?",
+          text: "Lors d'un combat, un allié a besoin de support. Comment intervenez-vous ?",
           options: [
-            { text: "Magie de feu et de destruction", value: "damage" },
-            { text: "Magie de soin et de protection", value: "healing" },
-            { text: "Magie de contrôle des éléments", value: "control" },
-            { text: "Magie de manipulation des esprits et invocations", value: "summoning" }
+            { text: "Je le soigne pour qu'il puisse continuer à combattre", value: "healing" },
+            { text: "Je lui donne un buff pour augmenter son efficacité", value: "buff" },
+            { text: "Je protège l'allié avec un bouclier magique", value: "protection" },
+            { text: "Je prends sa place pour encaisser les coups", value: "tank" },
           ],
         },
         {
-          text: "Comment réagissez-vous face à un ennemi puissant ?",
+          text: "Comment gérez-vous un ennemi qui tente de fuir ?",
           options: [
-            { text: "L'attaquer directement avec force", value: "damage" },
-            { text: "Utiliser mes pouvoirs pour le ralentir", value: "control" },
-            { text: "Protéger mes alliés contre ses attaques", value: "protection" },
-            { text: "Soigner mes alliés pendant qu’ils le combattent", value: "healing" }
+            { text: "Je l'immobilise avec un sort de contrôle", value: "control" },
+            { text: "Je l’affaiblis pour qu’il ne soit plus une menace", value: "debuff" },
+            { text: "J'utilise une invocation pour le poursuivre", value: "summoning" },
+            { text: "Je lance une attaque puissante pour le stopper", value: "damage" },
           ],
         },
         {
-          text: "Quel type de soutien offrez-vous à vos alliés ?",
+          text: "Face à une armée ennemie, quel rôle préférez-vous jouer ?",
           options: [
-            { text: "Des buffs pour augmenter leur force", value: "buff" },
-            { text: "Des soins pour les garder en vie", value: "healing" },
-            { text: "Des invocations pour les assister", value: "summoning" },
-            { text: "Des protections pour bloquer les dégâts", value: "protection" }
-          ],
-        },
-        {
-          text: "Si vous deviez affronter un groupe d'ennemis seul, que feriez-vous ?",
-          options: [
-            { text: "Les éliminer un par un avec de puissantes attaques", value: "damage" },
-            { text: "Créer des barrières pour réduire leurs attaques", value: "protection" },
-            { text: "Les affaiblir avec des sorts d'entrave", value: "debuff" },
-            { text: "Utiliser des créatures invoquées pour m'aider", value: "summoning" }
-          ],
-        },
-        {
-          text: "Quelle qualité vous définit le mieux en tant que guerrier ?",
-          options: [
-            { text: "La puissance brute", value: "damage" },
-            { text: "La résilience", value: "tank" },
-            { text: "L'altruisme", value: "healing" },
-            { text: "La capacité à contrôler le champ de bataille", value: "control" }
-          ],
-        },
-        {
-          text: "En pleine bataille, que privilégiez-vous ?",
-          options: [
-            { text: "Détruire mes ennemis le plus rapidement possible", value: "damage" },
-            { text: "Maintenir mes alliés en bonne santé", value: "healing" },
-            { text: "Gérer la position de l'ennemi", value: "control" },
-            { text: "Déployer des créatures pour prendre l'avantage", value: "summoning" }
-          ],
-        },
-        {
-          text: "Quel est votre style de combat favori ?",
-          options: [
-            { text: "Attaquer de manière agressive", value: "damage" },
-            { text: "Jouer de manière défensive et stratégique", value: "tank" },
-            { text: "Soutenir et protéger mes alliés", value: "protection" },
-            { text: "Avoir un rôle flexible en fonction des besoins", value: "support" }
+            { text: "J'attaque sans relâche pour réduire leur nombre", value: "damage" },
+            { text: "Je crée des défenses pour protéger mes alliés", value: "protection" },
+            { text: "J'affaiblis l'armée adverse pour limiter leur force", value: "debuff" },
+            { text: "Je buff mes alliés pour qu'ils puissent tenir plus longtemps", value: "buff" },
           ],
         },
         // Ajoute d'autres questions ici
       ],
       classScores: {
-        Ecaflip: 0,
-        Eniripsa: 0,
-        Iop: 0,
-        Cra: 0,
-        Feca: 0,
-        Sacrieur: 0,
-        Sadida: 0,
-        Osamodas: 0,
-        Enutrof: 0,
-        Sram: 0,
-        Xelor: 0,
-        Pandawa: 0,
-        Roublard: 0,
-        Zobal: 0,
-        Steamer: 0,
-        Eliotrope: 0,
-        Huppermage: 0,
-        Ouginak: 0,
-        Forgelance: 0,
-        // Ajoute toutes les autres classes ici
-    }
+        Ecaflip: 0, Eniripsa: 0, Iop: 0, Cra: 0, Feca: 0, Sacrieur: 0, Sadida: 0,
+        Osamodas: 0, Enutrof: 0, Sram: 0, Xelor: 0, Pandawa: 0, Roublard: 0,
+        Zobal: 0, Steamer: 0, Eliotrope: 0, Huppermage: 0, Ouginak: 0, Forgelance: 0,
+      }
     };
   },
   computed: {
@@ -147,125 +91,62 @@ export default {
     },
   },
   methods: {
+    shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    },
     handleAnswer(answer) {
       this.answers.push(answer);
 
-      // Ajuster les scores de classe en fonction de la réponse
-      switch (answer) {
-        case "damage":
-          this.classScores.Iop += 10;
-          this.classScores.Cra += 9;
-          this.classScores.Roublard += 8;
-          this.classScores.Sram += 8;
-          this.classScores.Zobal += 6;
-          this.classScores.Ecaflip += 7;
-          this.classScores.Osamodas += 5;
-          this.classScores.Huppermage += 8;
-          this.classScores.Eliotrope += 6;
-          this.classScores.Forgelance += 7;
-          this.classScores.Sacrieur += 4;
-          this.classScores.Pandawa += 3;
-          this.classScores.Steamer += 3;
-          break;
+      const classScoreMapping = {
+        damage: {
+          Iop: 10, Cra: 9, Roublard: 8, Sram: 8, Zobal: 6, Ecaflip: 7, Osamodas: 5,
+          Huppermage: 8, Eliotrope: 6, Forgelance: 7, Sacrieur: 4, Pandawa: 1,
+          Steamer: 6, Enutrof: 2, Sadida: 2, Xelor: 2, Eniripsa: 3, Ouginak: 5, Feca: 4
+        },
+        healing: {
+          Eniripsa: 10, Ecaflip: 8, Osamodas: 6, Steamer: 8, Sadida: 6, Zobal: 6,
+          Eliotrope: 7, Pandawa: 4, Huppermage: 3, Feca: 3, Sacrieur: 2, Iop: 2,
+          Enutrof: 2, Cra: 1, Sram: 1, Xelor: 1, Roublard: 1, Ouginak: 4, Forgelance: 2
+        },
+        protection: {
+          Feca: 10, Zobal: 8, Sacrieur: 7, Steamer: 6, Pandawa: 5, Eniripsa: 4,
+          Osamodas: 3, Sadida: 3, Huppermage: 4, Forgelance: 5, Xelor: 2, Roublard: 2,
+          Iop: 2, Ecaflip: 1, Sram: 1, Cra: 1, Ouginak: 4, Enutrof: 2, Eliotrope: 1
+        },
+        summoning: {
+          Osamodas: 10, Sadida: 9, Xelor: 5, Roublard: 4, Steamer: 6, Eniripsa: 3,
+          Cra: 2, Huppermage: 4, Forgelance: 3, Sacrieur: 1, Feca: 1, Eliotrope: 4,
+          Pandawa: 1, Ecaflip: 3, Sram: 3, Enutrof: 3, Ouginak: 2, Zobal: 1, Iop: 1
+        },
+        control: {
+          Xelor: 10, Pandawa: 8, Sadida: 7, Feca: 6, Sram: 9, Roublard: 6, Zobal: 4,
+          Steamer: 3, Huppermage: 5, Eliotrope: 7, Forgelance: 4, Ecaflip: 3, Cra: 3,
+          Eniripsa: 2, Osamodas: 2, Iop: 1, Sacrieur: 1, Enutrof: 1, Ouginak: 2
+        },
+        tank: {
+          Sacrieur: 8, Pandawa: 10, Feca: 7, Zobal: 6, Steamer: 5, Forgelance: 6,
+          Sadida: 4, Enutrof: 3, Iop: 2, Osamodas: 3, Eliotrope: 4, Ouginak: 7,
+          Huppermage: 2, Ecaflip: 2, Cra: 1, Sram: 2, Eniripsa: 1, Xelor: 1, Roublard: 1
+        },
+        debuff: {
+          Sram: 3, Sadida: 9, Roublard: 8, Xelor: 7, Feca: 6, Cra: 4, Eniripsa: 8,
+          Enutrof: 5, Pandawa: 4, Eliotrope: 4, Huppermage: 8, Zobal: 3, Osamodas: 2,
+          Steamer: 3, Sacrieur: 2, Ecaflip: 1, Forgelance: 1, Iop: 1, Ouginak: 2
+        },
+        buff: {
+          Osamodas: 10, Eniripsa: 9, Zobal: 7, Ecaflip: 8, Pandawa: 6, Steamer: 5,
+          Iop: 6, Sadida: 4, Feca: 3, Forgelance: 4, Huppermage: 6, Xelor: 3, Sram: 3,
+          Eliotrope: 6, Cra: 2, Roublard: 2, Enutrof: 1, Sacrieur: 1, Ouginak: 4
+        }
+      };
 
-        case "healing":
-          this.classScores.Eniripsa += 10;
-          this.classScores.Ecaflip += 8;
-          this.classScores.Osamodas += 6;
-          this.classScores.Steamer += 7;
-          this.classScores.Sadida += 6;
-          this.classScores.Zobal += 6;
-          this.classScores.Eliotrope += 7;
-          this.classScores.Pandawa += 4;
-          this.classScores.Huppermage += 3;
-          this.classScores.Feca += 3;
-          this.classScores.Sacrieur += 2;
-          break;
 
-        case "protection":
-          this.classScores.Feca += 10;
-          this.classScores.Zobal += 8;
-          this.classScores.Sacrieur += 7;
-          this.classScores.Steamer += 6;
-          this.classScores.Pandawa += 5;
-          this.classScores.Eniripsa += 4;
-          this.classScores.Osamodas += 3;
-          this.classScores.Sadida += 3;
-          this.classScores.Huppermage += 4;
-          this.classScores.Forgelance += 5;
-          break;
-
-        case "summoning":
-          this.classScores.Osamodas += 10;
-          this.classScores.Sadida += 9;
-          this.classScores.Xelor += 5;
-          this.classScores.Roublard += 4;
-          this.classScores.Steamer += 6;
-          this.classScores.Eniripsa += 3;
-          this.classScores.Cra += 2;
-          this.classScores.Huppermage += 4;
-          this.classScores.Forgelance += 3;
-          this.classScores.Sacrieur += 1;
-          break;
-
-        case "control":
-          this.classScores.Xelor += 10;
-          this.classScores.Pandawa += 8;
-          this.classScores.Sadida += 7;
-          this.classScores.Feca += 6;
-          this.classScores.Sram += 9;
-          this.classScores.Roublard += 6;
-          this.classScores.Zobal += 4;
-          this.classScores.Steamer += 3;
-          this.classScores.Huppermage += 5;
-          this.classScores.Eliotrope += 7;
-          this.classScores.Forgelance += 4;
-          break;
-
-        case "tank":
-          this.classScores.Sacrieur += 10;
-          this.classScores.Pandawa += 8;
-          this.classScores.Feca += 7;
-          this.classScores.Zobal += 6;
-          this.classScores.Steamer += 5;
-          this.classScores.Forgelance += 6;
-          this.classScores.Sadida += 4;
-          this.classScores.Enutrof += 3;
-          this.classScores.Iop += 2;
-          this.classScores.Osamodas += 3;
-          this.classScores.Eliotrope += 4;
-          break;
-
-        case "debuff":
-          this.classScores.Sram += 10;
-          this.classScores.Sadida += 9;
-          this.classScores.Roublard += 8;
-          this.classScores.Xelor += 7;
-          this.classScores.Feca += 6;
-          this.classScores.Cra += 4;
-          this.classScores.Eniripsa += 5;
-          this.classScores.Enutrof += 5;
-          this.classScores.Pandawa += 4;
-          this.classScores.Eliotrope += 4;
-          this.classScores.Huppermage += 5;
-          break;
-
-        case "buff":
-          this.classScores.Osamodas += 10;
-          this.classScores.Eniripsa += 9;
-          this.classScores.Zobal += 7;
-          this.classScores.Ecaflip += 8;
-          this.classScores.Pandawa += 6;
-          this.classScores.Steamer += 5;
-          this.classScores.Iop += 5;
-          this.classScores.Sadida += 4;
-          this.classScores.Feca += 3;
-          this.classScores.Forgelance += 4;
-          this.classScores.Huppermage += 6;
-          break;
-
-        default:
-          break;
+      const classImpact = classScoreMapping[answer] || {};
+      for (const [className, score] of Object.entries(classImpact)) {
+        this.classScores[className] += score;
       }
 
       this.currentQuestionIndex++;
@@ -274,18 +155,21 @@ export default {
       }
     },
     calculateClassRecommendation() {
-      // Trouver la classe avec le score le plus élevé
       const recommendedClass = Object.keys(this.classScores).reduce((a, b) =>
         this.classScores[a] > this.classScores[b] ? a : b
       );
-
-      // Rediriger vers la page de résultats avec la classe recommandée
       this.$router.push({
         path: '/result',
         query: { classRecommendation: recommendedClass }
       });
     },
   },
+  created() {
+    // Mélange les options de chaque question lors du montage du composant
+    this.questions.forEach(question => {
+      this.shuffle(question.options);
+    });
+  }
 };
 </script>
 
