@@ -1,85 +1,96 @@
 <template>
-  <div class="page-container">
-    <!-- Contenu principal de la page -->
-    <div class="result">
-      <button @click="goToQuiz" class="back-to-quiz-button">
-        <span class="icon">←</span> Retour au quiz
-      </button>
-
-      <h2 class="class-result-heading">
-        <span class="normal-text">Vous correspondez à la classe</span>
-        <span class="bold-text"> {{ classRecommendation }} </span>
-        <img :src="logoSource" alt="Logo Classe" class="logo" v-if="logoSource" />
-      </h2>
-
-      <div class="responsive-video">
-        <iframe
-          v-if="isYouTubeVideo"
-          :src="videoSource"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="button-group">
-        <button 
-          @click="toggleImage('PVP')" 
-          :class="['styled-button', showPVPImage ? 'active-button' : '']"
-        >
-          PVP
+    <div class="page-container">
+      <!-- Contenu principal de la page -->
+      <div class="result">
+        <button @click="goToQuiz" class="back-to-quiz-button">
+          <span class="icon">←</span> Retour au quiz
         </button>
-        <button 
-          @click="toggleImage('PVM')" 
-          :class="['styled-button', showPVMImage ? 'active-button' : '']"
-        >
-          PVM
-        </button>
-      </div>
 
-      <div ref="imageSection">
-        <div v-if="showPVMImage" class="build-link-container">
-          <a :href="pvmBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+        <h2 class="class-result-heading">
+          <span class="normal-text">Vous correspondez à la classe</span>
+          <span class="bold-text"> {{ classRecommendation }} </span>
+          <img :src="logoSource" alt="Logo Classe" class="logo" v-if="logoSource" />
+        </h2>
+
+        <div class="responsive-video">
+          <iframe
+            v-if="isYouTubeVideo"
+            :src="videoSource"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
 
-        <div v-if="showPVPImage" class="build-link-container">
-          <a :href="pvpBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+        <div class="button-group">
+          <button 
+            @click="toggleImage('PVP')" 
+            :class="['styled-button', showPVPImage ? 'active-button' : '']"
+          >
+            PVP
+          </button>
+          <button 
+            @click="toggleImage('PVM')" 
+            :class="['styled-button', showPVMImage ? 'active-button' : '']"
+          >
+            PVM
+          </button>
         </div>
 
-        <div v-if="showPVPImage || showPVMImage" class="table-container">
-          <table class="points-table">
-            <thead>
-              <tr>
-                <th>Points positifs</th>
-                <th>Points négatifs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(point, index) in pointsTable" :key="index">
-                <td class="positive">{{ point.positif }}</td>
-                <td class="negative">{{ point.negatif }}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="info-container">
-            <!-- Texte dynamique pour l'auteur en fonction du mode sélectionné -->
-            <div class="joueur-info">
-              {{ authorText }}
-            </div>
-            <!-- Affichage de la version actuelle de Dofus -->
-            <div class="version-info">
-              Patch : 2.73.3.12
+        <div ref="imageSection">
+          <div v-if="showPVMImage" class="build-link-container">
+            <a :href="pvmBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+          </div>
+
+          <div v-if="showPVPImage" class="build-link-container">
+            <a :href="pvpBuildUrl" target="_blank" class="build-link">Voir les builds</a>
+          </div>
+
+          <div v-if="showPVPImage || showPVMImage" class="table-container">
+            <table class="points-table">
+              <thead>
+                <tr>
+                  <th>Points positifs</th>
+                  <th>Points négatifs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(point, index) in pointsTable" :key="index">
+                  <td class="positive">{{ point.positif }}</td>
+                  <td class="negative">{{ point.negatif }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="info-container">
+              <!-- Texte dynamique pour l'auteur en fonction du mode sélectionné -->
+              <div class="joueur-info">
+                {{ authorText }}
+              </div>
+              <!-- Affichage de la version actuelle de Dofus -->
+              <div class="version-info">
+                Patch : 2.73.3.12
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TP8S9FDS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 </template>
 
 <script setup>
 import { ref, nextTick, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+
+//Google Tag Manager
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TP8S9FDS');
 
 const router = useRouter();
 const route = useRoute();
