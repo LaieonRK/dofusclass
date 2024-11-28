@@ -24,60 +24,104 @@ export default {
       answers: [],
       questions: [
         {
-          text: "Vous êtes encerclé par des ennemis. Quelle est votre première réaction ?",
+          text: "Un groupe d'ennemis s'approche rapidement. Quelle est votre priorité ?",
           options: [
-            { text: "Je frappe immédiatement pour en éliminer le plus possible", value: "damage" },
-            { text: "Je place des protections pour moi et mes alliés", value: "protection" },
-            { text: "J'invoque des créatures pour détourner l'attention", value: "summoning" },
-            { text: "Je recule et affaiblis leurs défenses", value: "debuff" },
-          ],
+            { text: "Infliger des dégâts pour les éliminer rapidement.", value: "damage" },
+            { text: "Poser des protections pour réduire les dégâts subis.", value: "protection" },
+            { text: "Utiliser des invocations pour gagner du temps.", value: "summoning" },
+            { text: "Les repousser/immobiliser pour empêcher leur progression.", value: "control" }
+          ]
         },
         {
-          text: "Un de vos alliés est grièvement blessé et l'ennemi approche. Que faites-vous ?",
+          text: "Votre allié est encerclé et sur le point de mourir. Comment réagissez-vous ?",
           options: [
-            { text: "Je soigne immédiatement mon allié", value: "healing" },
-            { text: "J'attire les ennemis pour les éloigner de lui", value: "tank" },
-            { text: "Je le buff pour augmenter sa résistance", value: "buff" },
-            { text: "Je tente de ralentir les ennemis pour gagner du temps", value: "control" },
-          ],
+            { text: "Le soigner pour qu'il puisse continuer à se battre.", value: "healing" },
+            { text: "Attirer les ennemis pour qu'ils se concentrent sur moi.", value: "tank" },
+            { text: "Buff mon allié pour augmenter sa défense et sa force.", value: "buff" },
+            { text: "Affaiblir les ennemis pour réduire leurs dégâts.", value: "debuff" }
+          ]
         },
         {
-          text: "Vous avez l’opportunité de surprendre un groupe d’ennemis. Comment commencez-vous ?",
+          text: "Vous êtes dans un donjon et un boss commence à invoquer des ennemies. Quelle est votre stratégie ?",
           options: [
-            { text: "Je prépare un sort puissant pour infliger des dégâts massifs", value: "damage" },
-            { text: "J'invoque des alliés pour prendre l'avantage", value: "summoning" },
-            { text: "J'affaiblis leurs capacités pour limiter leur riposte", value: "debuff" },
-            { text: "Je me renforce pour résister aux premières attaques", value: "tank" },
-          ],
+            { text: "Focaliser mes attaques sur les invocations ennemies.", value: "damage" },
+            { text: "Utiliser des sorts de contrôle pour limiter leurs déplacements.", value: "control" },
+            { text: "Protéger mon équipe pendant qu'elle combat les invocations.", value: "protection" },
+            { text: "Invoquer des alliés supplémentaires pour équilibrer les troupes.", value: "summoning" }
+          ]
         },
         {
-          text: "Lors d'un combat, un allié a besoin de support. Comment intervenez-vous ?",
+          text: "Un ennemi tente de s’échapper avec un butin précieux. Comment réagissez-vous ?",
           options: [
-            { text: "Je le soigne pour qu'il puisse continuer à combattre", value: "healing" },
-            { text: "Je lui donne un buff pour augmenter son efficacité", value: "buff" },
-            { text: "Je protège l'allié avec un bouclier magique", value: "protection" },
-            { text: "Je prends sa place pour encaisser les coups", value: "tank" },
-          ],
+            { text: "Utiliser un sort de contrôle pour l’immobiliser.", value: "control" },
+            { text: "Infliger une attaque puissante pour le tuer.", value: "damage" },
+            { text: "Lancer des sorts d'affaiblissement pour préparer une attaque.", value: "debuff" },
+            { text: "Lui barrer son chemin avec une invocation.", value: "summoning" }
+          ]
         },
         {
-          text: "Comment gérez-vous un ennemi qui tente de fuir ?",
+          text: "Un combat s’engage dans une zone étroite où le placement est crucial. Quel rôle jouez-vous ?",
           options: [
-            { text: "Je l'immobilise avec un sort de contrôle", value: "control" },
-            { text: "Je l’affaiblis pour qu’il ne soit plus une menace", value: "debuff" },
-            { text: "J'utilise une invocation pour le poursuivre", value: "summoning" },
-            { text: "Je lance une attaque puissante pour le stopper", value: "damage" },
-          ],
+            { text: "Contrôler les positions des ennemis pour prendre l’avantage.", value: "control" },
+            { text: "Infliger des dégâts constants pour éliminer les menaces rapidement.", value: "damage" },
+            { text: "Protéger mes alliés vulnérables dans cet espace limité.", value: "protection" },
+            { text: "Utiliser des invocations pour bloquer les déplacements ennemis.", value: "summoning" }
+          ]
         },
         {
-          text: "Face à une armée ennemie, quel rôle préférez-vous jouer ?",
+          text: "Votre équipe affronte un boss complexe avec plusieurs mécaniques à gérer. Quelle est votre spécialité ?",
           options: [
-            { text: "J'attaque sans relâche pour réduire leur nombre", value: "damage" },
-            { text: "Je crée des défenses pour protéger mes alliés", value: "protection" },
-            { text: "J'affaiblis l'armée adverse pour limiter leur force", value: "debuff" },
-            { text: "Je buff mes alliés pour qu'ils puissent tenir plus longtemps", value: "buff" },
-          ],
+            { text: "Infliger des dégâts constants et suivre la stratégie établie.", value: "damage" },
+            { text: "M’assurer que les mécaniques soient respectées en contrôlant les monstres.", value: "control" },
+            { text: "Temporiser en protégeant son équipe pour ne pas louper la mécanique.", value: "protection" },
+            { text: "Utiliser des buffs pour augmenter l’efficacité de l’équipe.", value: "buff" }
+          ]
         },
-        // Ajoute d'autres questions ici
+        {
+          text: "Vous affrontez un Eniripsa qui soigne constamment son équipe. Comment réagissez-vous ?",
+          options: [
+            { text: "Concentrer mes attaques sur lui pour l’éliminer rapidement.", value: "damage" },
+            { text: "Utiliser des sorts pour réduire son efficacité de soin.", value: "debuff" },
+            { text: "Utiliser des sorts de contrôles/de déplacements pour l'éloigner de ses alliés.", value: "control" },
+            { text: "Soigner mon équipe pour mieux résister à ses soins prolongés.", value: "healing" }
+          ]
+        },
+        {
+          text: "Vous êtes face à un Sram qui pose des pièges partout. Quelle est votre stratégie ?",
+          options: [
+            { text: "Essayer de trouver et neutraliser ses pièges.", value: "control" },
+            { text: "Rusher pour le forcer à se révéler avant qu’il ne prépare davantage de piège.", value: "damage" },
+            { text: "Poser des boucliers pour protéger mon équipe contre ses pièges.", value: "protection" },
+            { text: "Invoquer des créatures pour déclencher ses pièges à ma place.", value: "summoning" }
+          ]
+        },
+        {
+          text: "Un Cra vous harcèle à distance avec des attaques puissantes. Que faites-vous ?",
+          options: [
+            { text: "Utiliser des sorts pour limiter sa portée ou sa vision.", value: "control" },
+            { text: "Poser des boucliers pour réduire les dégâts de ses attaques.", value: "protection" },
+            { text: "L’approcher rapidement pour le forcer à combattre au corps à corps.", value: "damage" },
+            { text: "Buff mon équipe pour résister à ses tirs de flèches.", value: "buff" }
+          ]
+        },
+        {
+          text: "Vous affrontez un Sacrieur qui devient de plus en plus dangereux à mesure qu’il perd de la vie. Quelle est votre stratégie ?",
+          options: [
+            { text: "Lui retirer ses capacités d'action pour éviter qu'il ne tape trop fort.", value: "control" },
+            { text: "L’affaiblir rapidement avant qu’il ne devienne ingérable.", value: "damage" },
+            { text: "Renforcer mes alliés pour lui faire le + de dégâts possibles d'un coup.", value: "buff" },
+            { text: "Poser des boucliers pour limiter son impact quand il devient plus fort.", value: "protection" }
+          ]
+        },
+        {
+          text: "En PvP, vous êtes dans une équipe où tout le monde joue de manière offensive. Quel rôle adoptez-vous ?",
+          options: [
+            { text: "Je reste en retrait pour soigner et assurer la survie de mes alliés.", value: "healing" },
+            { text: "J’utilise des buffs pour amplifier les dégâts de mes coéquipiers.", value: "buff" },
+            { text: "J’attaque avec eux pour maximiser notre impact offensif.", value: "damage" },
+            { text: "J’applique des contrôles pour maintenir l’ennemi en désavantage.", value: "control" }
+          ]
+        }
       ],
       classScores: {
         Ecaflip: 0, Eniripsa: 0, Iop: 0, Cra: 0, Feca: 0, Sacrieur: 0, Sadida: 0,
