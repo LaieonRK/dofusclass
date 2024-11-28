@@ -51,15 +51,6 @@ export default {
           ]
         },
         {
-          text: "Un ennemi tente de s’échapper avec un butin précieux. Comment réagissez-vous ?",
-          options: [
-            { text: "Utiliser un sort de contrôle pour l’immobiliser.", value: "control" },
-            { text: "Infliger une attaque puissante pour le tuer.", value: "damage" },
-            { text: "Lancer des sorts d'affaiblissement pour préparer une attaque.", value: "debuff" },
-            { text: "Lui barrer son chemin avec une invocation.", value: "summoning" }
-          ]
-        },
-        {
           text: "Un combat s’engage dans une zone étroite où le placement est crucial. Quel rôle jouez-vous ?",
           options: [
             { text: "Contrôler les positions des ennemis pour prendre l’avantage.", value: "control" },
